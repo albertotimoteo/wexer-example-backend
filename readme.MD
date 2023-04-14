@@ -15,7 +15,7 @@ A entidade "Usuário" representa os usuários do sistema.
 
 ### Exemplo
 
-\`\`\`javascript
+```javascript
 {
   "_id": "60a2a68c7b4f4d004e9a25d9",
   "name": "Fulano de Tal",
@@ -23,7 +23,7 @@ A entidade "Usuário" representa os usuários do sistema.
   "password": "***********",
   "createdAt": "2021-05-17T18:30:00.000Z"
 }
-\`\`\`
+```
 
 **Importante**
 
@@ -48,7 +48,7 @@ A entidade "Patient" representa os pacientes cadastrados no sistema.
 
 ### Exemplo
 
-\`\`\`javascript
+```javascript
 {
   "_id": "60a2a68c7b4f4d004e9a25d8",
   "userId": "60a2a68c7b4f4d004e9a25d9",
@@ -59,7 +59,7 @@ A entidade "Patient" representa os pacientes cadastrados no sistema.
   "demands": "Dor nas costas",
   "personalAnnotations": "Paciente com histórico de problemas de coluna."
 }
-\`\`\`
+```
 
 **Importante**
 
@@ -82,7 +82,7 @@ A entidade "Timeline" representa as linhas do tempo relacionadas aos pacientes c
 
 ### Exemplo
 
-\`\`\`javascript
+```javascript
 {
   "_id": "60a2a68c7b4f4d004e9a25e1",
   "patientId": "60a2a68c7b4f4d004e9a25d8",
@@ -95,7 +95,7 @@ A entidade "Timeline" representa as linhas do tempo relacionadas aos pacientes c
   "createdOn": "2021-05-16T18:32:47.000Z",
   "modifiedOn": "2021-05-18T08:14:13.000Z"
 }
-\`\`\`
+```
 
 **Importante**
 
@@ -119,7 +119,7 @@ A entidade "Occurrence" representa uma ocorrência de uma sessão de terapia ou 
 
 **Exemplo:**
 
-\`\`\`javascript
+```javascript
 {
   "title": "Sessão 1",
   "content": "Hoje conversamos sobre...",
@@ -147,7 +147,7 @@ A entidade "Occurrence" representa uma ocorrência de uma sessão de terapia ou 
   "createdOn": "2022-03-10T13:50:00.000Z",
   "modifiedOn": "2022-03-10T13:50:00.000Z"
 }
-\`\`\`
+```
 
 **Importante**
 
@@ -168,7 +168,7 @@ A entidade "Assessment" representa uma avaliação psicológica. Ela pode ser um
 
 **Exemplo:**
 
-\`\`\`javascript
+```javascript
 {
   type: "interview",
   status: "done",
@@ -206,7 +206,7 @@ A entidade "Assessment" representa uma avaliação psicológica. Ela pode ser um
   ],
   observation: "O paciente se mostrou bastante cooperativo durante a avaliação"
 }
-\`\`\`
+```
 
 **Importante**
 
