@@ -2,7 +2,7 @@ const mongoose = require("../config/database")
 const { Schema } = mongoose
 
 const patientSchema = new Schema({
-  userId: { type: Schema.Types.ObjectId, ref: "User" },
+  userId: { type: Schema.Types.ObjectId, ref: "user" },
   name: { type: String, required: true },
   birthdate: { type: Date, required: true },
   profession: { type: String },
@@ -11,4 +11,4 @@ const patientSchema = new Schema({
   personalAnnotations: { type: String },
 })
 
-module.exports = mongoose.model("patient", patientSchema)
+module.exports = mongoose.model("patient", patientSchema, "patient")

@@ -5,15 +5,19 @@ const { Schema } = mongoose
 const timelineSchema = new Schema({
   patientId: {
     type: Schema.Types.ObjectId,
-    ref: "Patient",
+    ref: "patient",
     required: true,
   },
   occurrences: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Occurrence",
+      ref: "occurrence",
     },
   ],
+  serviceName: {
+    type: Schema.Types.String,
+    required: true,
+  },
   createdOn: {
     type: Date,
     default: Date.now,
@@ -24,4 +28,4 @@ const timelineSchema = new Schema({
   },
 })
 
-module.exports = mongoose.model("timeline", timelineSchema)
+module.exports = mongoose.model("timeline", timelineSchema, "timeline")

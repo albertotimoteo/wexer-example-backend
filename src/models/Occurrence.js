@@ -4,47 +4,45 @@ const Schema = mongoose.Schema
 const occurrenceSchema = new Schema({
   title: {
     type: String,
-    required: true,
   },
   content: {
     type: String,
-    required: true,
   },
   files: [
     {
       filename: String,
+      filesize: Number,
     },
   ],
   type: {
     type: String,
     required: true,
+    enum: ["session", "relevant_fact", "attachment", "assessment"],
   },
-  assessment: {
-    type: {
-      type: String,
-      required: true,
-    },
-    status: {
-      type: String,
-      required: true,
-    },
-    assessmentId: {
+  assessments: {
+    interview: {
       type: Schema.Types.ObjectId,
-      ref: "Assessment",
+      ref: "assessment",
+    },
+    tests: {
+      type: Schema.Types.ObjectId,
+      ref: "assessment",
+    },
+    observation: {
+      type: Schema.Types.ObjectId,
+      ref: "assessment",
     },
   },
+
   payment: {
     value: {
       type: Number,
-      required: true,
     },
     method: {
       type: String,
-      required: true,
     },
     status: {
       type: String,
-      required: true,
     },
   },
   createdOn: {
@@ -57,4 +55,4 @@ const occurrenceSchema = new Schema({
   },
 })
 
-module.exports = mongoose.model("occurrence", occurrenceSchema)
+module.exports = mongoose.model("occurrence", occurrenceSchema, "occurrence")

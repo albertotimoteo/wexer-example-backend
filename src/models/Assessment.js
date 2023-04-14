@@ -1,18 +1,22 @@
 const mongoose = require("../config/database")
 
 const assessmentSchema = new mongoose.Schema({
-  patientId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Patient",
-    required: true,
-  },
   type: {
     type: String,
     required: true,
+    enum: ["interview", "tests", "observation"],
+  },
+  status: {
+    type: String,
+    required: true,
+    enum: ["pending", "done"],
   },
   interview: [
     {
       abstract: {
+        type: String,
+      },
+      question: {
         type: String,
       },
       textAnswer: {
@@ -57,4 +61,4 @@ const assessmentSchema = new mongoose.Schema({
   },
 })
 
-module.exports = mongoose.model("assessment", assessmentSchema)
+module.exports = mongoose.model("assessment", assessmentSchema, "assessment")
