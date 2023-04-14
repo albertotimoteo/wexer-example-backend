@@ -1,5 +1,7 @@
 # Descrição das entidades do banco de dados
 
+URL da api: [https://wexer-example-backend.vercel.app/](https://wexer-example-backend.vercel.app/)
+
 ## Entidade "Usuário"
 
 A entidade "Usuário" representa os usuários do sistema.
