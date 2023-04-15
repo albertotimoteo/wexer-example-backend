@@ -1,15 +1,19 @@
 const express = require("express")
+const bodyParser = require("body-parser")
+const cors = require("cors")
+require("dotenv").config()
+
 const user = require("./routes/user")
 const patient = require("./routes/patient")
 const occurrence = require("./routes/occurrence")
 const timeline = require("./routes/timeline")
 const assessment = require("./routes/assessment")
-const bodyParser = require("body-parser")
-require("dotenv").config()
 const checkKey = require("./middlewares/checkKey")
 
 const app = express()
 const port = process.env.PORT || 3000
+
+app.use(cors())
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
