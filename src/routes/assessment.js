@@ -5,7 +5,7 @@ const checkToken = require("../middlewares/checkToken")
 
 router.use(checkToken)
 
-router.get("/assessments/:id", async (req, res) => {
+router.get("/:id", async (req, res) => {
   const id = req.params.id
   try {
     const assessment = await Assessment.findById(id)
@@ -15,7 +15,7 @@ router.get("/assessments/:id", async (req, res) => {
   }
 })
 
-router.put("/assessments/:id", async (req, res) => {
+router.put("/:id", async (req, res) => {
   const id = req.params.id
   try {
     const updatedAssessment = await Assessment.findByIdAndUpdate(id, req.body, {
