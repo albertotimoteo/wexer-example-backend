@@ -1,5 +1,6 @@
-const mongoose = require("../config/database")
+const mongoose = require("mongoose")
 const Schema = mongoose.Schema
+const Connection = require("../config/database")
 
 const occurrenceSchema = new Schema({
   title: {
@@ -55,4 +56,6 @@ const occurrenceSchema = new Schema({
   },
 })
 
-module.exports = mongoose.model("occurrence", occurrenceSchema, "occurrence")
+const connection = new Connection()
+
+module.exports = connection.model("occurrence", occurrenceSchema, "occurrence")

@@ -1,5 +1,6 @@
-const mongoose = require("../config/database")
+const mongoose = require("mongoose")
 const { Schema } = mongoose
+const Connection = require("../config/database")
 
 const patientSchema = new Schema({
   userId: { type: Schema.Types.ObjectId, ref: "user" },
@@ -11,4 +12,6 @@ const patientSchema = new Schema({
   personalAnnotations: { type: String },
 })
 
-module.exports = mongoose.model("patient", patientSchema, "patient")
+const connection = new Connection()
+
+module.exports = connection.model("patient", patientSchema, "patient")

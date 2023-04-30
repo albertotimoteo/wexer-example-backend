@@ -1,5 +1,6 @@
-const mongoose = require("../config/database")
+const mongoose = require("mongoose")
 const Schema = mongoose.Schema
+const Connection = require("../config/database")
 
 const userSchema = new Schema({
   name: {
@@ -20,5 +21,6 @@ const userSchema = new Schema({
     default: Date.now,
   },
 })
+const connection = new Connection()
 
-module.exports = mongoose.model("user", userSchema, "user")
+module.exports = connection.model("user", userSchema, "user")

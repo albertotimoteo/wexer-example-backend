@@ -1,4 +1,5 @@
-const mongoose = require("../config/database")
+const mongoose = require("mongoose")
+const Connection = require("../config/database")
 
 const { Schema } = mongoose
 
@@ -27,5 +28,6 @@ const timelineSchema = new Schema({
     default: Date.now,
   },
 })
+const connection = new Connection()
 
-module.exports = mongoose.model("timeline", timelineSchema, "timeline")
+module.exports = connection.model("timeline", timelineSchema, "timeline")

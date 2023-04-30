@@ -1,4 +1,5 @@
-const mongoose = require("../config/database")
+const mongoose = require("mongoose")
+const Connection = require("../config/database")
 
 const assessmentSchema = new mongoose.Schema({
   type: {
@@ -61,4 +62,6 @@ const assessmentSchema = new mongoose.Schema({
   },
 })
 
-module.exports = mongoose.model("assessment", assessmentSchema, "assessment")
+const connection = new Connection()
+
+module.exports = connection.model("assessment", assessmentSchema, "assessment")

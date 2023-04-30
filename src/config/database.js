@@ -3,14 +3,17 @@ require("dotenv").config()
 
 const uri = process.env.MONGODB_URI
 
-mongoose
-  .connect(uri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => {
-    console.log("MongoDB Connected")
-  })
-  .catch((err) => console.log("Error connecting MongoDB:", err))
+class Connection {
+  constructor() {
+    if (!Connection.instance) {
+      mongoose.connect(uri, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      })
+      Connection.instance = mongoose.connection
+    }
+    return Connection.instance
+  }
+}
 
-module.exports = mongoose
+module.exports = Connection
